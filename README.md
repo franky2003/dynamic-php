@@ -22,3 +22,11 @@ A simple and dynamic To-Do List application built using PHP and session manageme
    git clone <repository-url>
    cd todo-list
    ```
+
+2. **Start a local server:**:
+   You can use the built-in PHP server for testing:
+   ```php -S localhost:8000
+
+   ```
+3. **Access the application:**:
+   Open your web browser and go to http://localhost:8000 to see the To-Do List application in action.
