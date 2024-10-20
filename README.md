@@ -33,6 +33,8 @@ A simple and dynamic To-Do List application built using PHP and session manageme
 
    **Example**:
 
-   ![image](https://github.com/user-attachments/assets/667d2602-71ab-4959-9dba-ac47ef9f2591)
+   <p align="center">
+  <img width="460" height="300" src="https://github.com/user-attachments/assets/667d2602-71ab-4959-9dba-ac47ef9f2591">
+</p>![image](https://github.com/user-attachments/assets/667d2602-71ab-4959-9dba-ac47ef9f2591)
 
 
