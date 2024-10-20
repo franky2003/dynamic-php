@@ -30,5 +30,9 @@ A simple and dynamic To-Do List application built using PHP and session manageme
    ```
 3. **Access the application:**:
    Open your web browser and go to http://localhost:8000 to see the To-Do List application in action.
-   ![image](https://github.com/user-attachments/assets/d2703cc8-57a7-45f8-a91c-3356ee430d3c)
+
+   **Example**:
+
+   ![image](https://github.com/user-attachments/assets/667d2602-71ab-4959-9dba-ac47ef9f2591)
+
 
