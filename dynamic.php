@@ -1,21 +1,31 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['todo_list'])) {
-    $_SESSION['todo_list'] = [];
-}
+$pdo = new PDO('mysql:host=localhost;dbname=todo_app', 'root', 'root');
 
 if (isset($_POST['add_task'])) {
     $task = htmlspecialchars($_POST['task']);
     if (!empty($task)) {
-        $_SESSION['todo_list'][] = $task;
+        $sql = "INSERT INTO tasks (task) VALUES (:task)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['task' => $task]);
+        
+        header('Location: ' . $_SERVER['PHP_SELF']);
+        exit;
     }
 }
 
 if (isset($_GET['remove_task'])) {
     $task_id = (int)$_GET['remove_task'];
-    unset($_SESSION['todo_list'][$task_id]);
+    $sql = "DELETE FROM tasks WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['id' => $task_id]);
+    
+    header('Location: ' . $_SERVER['PHP_SELF']);
+    exit;
 }
+
+$sql = "SELECT * FROM tasks";
+$query = $pdo->query($sql);
+$tasks = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -102,17 +112,15 @@ if (isset($_GET['remove_task'])) {
         <input type="text" name="task" placeholder="Enter a new task" required>
         <input type="submit" name="add_task" value="Add Task">
     </form>
-
     <ul>
-        <?php foreach ($_SESSION['todo_list'] as $id => $task) : ?>
+        <?php foreach ($tasks as $task) : ?>
             <li>
-                <?php echo $task; ?>
-                <a href="?remove_task=<?php echo $id; ?>">Remove</a>
+                <?php echo $task['task']; ?>
+                <a href="?remove_task=<?php echo $task['id']; ?>">Remove</a>
             </li>
         <?php endforeach; ?>
     </ul>
 
 </div>
-
 </body>
-</html>
+</html> 
