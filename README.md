@@ -31,10 +31,9 @@ A simple and dynamic To-Do List application built using PHP and session manageme
 3. **Access the application:**:
    Open your web browser and go to http://localhost:8000 to see the To-Do List application in action.
 
-   **Example**:
 
-   <p align="center">
-  <img width="460" height="300" src="https://github.com/user-attachments/assets/667d2602-71ab-4959-9dba-ac47ef9f2591">
-</p>![image](https://github.com/user-attachments/assets/667d2602-71ab-4959-9dba-ac47ef9f2591)
+Example:
+
+<div style="text-align: center;"> <img src="https://github.com/user-attachments/assets/667d2602-71ab-4959-9dba-ac47ef9f2591" alt="To-Do List Example" /> </div>
 
 
